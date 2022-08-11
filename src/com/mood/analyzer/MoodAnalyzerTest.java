@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class MoodAnalyzerTest {
 
-	// Repeat tc_1.1
+	//repeat tc_1.1
 	@Test
 	public void givenIAmSadMoodShouldReturnSAD() {
 		String msg ="I Am Sad Mood";
@@ -16,5 +16,16 @@ class MoodAnalyzerTest {
 		assertEquals("SAD", massage);
 		
 	}
-    
+
+	//repeat tc_1.2
+	@Test
+	public void givenIAmInAnyMoodShouldReturnHAPPPY() {
+		String msg ="I Am Happy Mood";
+		MoodAnalyzer analyzer= new MoodAnalyzer(msg);
+		String massage = analyzer.analyseMood();
+
+		assertEquals("HAPPY", massage);
+
+	}
+
 }
