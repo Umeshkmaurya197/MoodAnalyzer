@@ -15,5 +15,15 @@ class MoodAnalyzerTest {
 		assertEquals("SAD", msg);
 		
 	}
+	//tc_1.2
+		@Test
+		public void givenIAmInAnyMoodShouldReturnHAPPPY() {
+			MoodAnalyzer analyzer= new MoodAnalyzer();
+			String msg = analyzer.analyseMood("I Am In Any Mood");
+			
+			assertEquals("HAPPY", msg);
+			
+		}
+	
 
 }

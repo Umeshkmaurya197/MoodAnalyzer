@@ -7,7 +7,7 @@ public class MoodAnalyzer {
 		if(msg.contains("Sad")) 
 			return "SAD";
 		else
-			return msg;
+			return "HAPPY";
 }
 	
 	public static void main(String[] args) {
