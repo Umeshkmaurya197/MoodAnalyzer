@@ -5,25 +5,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class MoodAnalyzerTest {
-	
-	//tc_1.1
+
+	// Repeat tc_1.1
 	@Test
 	public void givenIAmSadMoodShouldReturnSAD() {
-		MoodAnalyzer analyzer= new MoodAnalyzer();
-		String msg = analyzer.analyseMood("I Am Sad Mood");
+		String msg ="I Am Sad Mood";
+		MoodAnalyzer analyzer= new MoodAnalyzer(msg);
+		String massage = analyzer.analyseMood();
 		
-		assertEquals("SAD", msg);
+		assertEquals("SAD", massage);
 		
 	}
-	//tc_1.2
-		@Test
-		public void givenIAmInAnyMoodShouldReturnHAPPPY() {
-			MoodAnalyzer analyzer= new MoodAnalyzer();
-			String msg = analyzer.analyseMood("I Am In Any Mood");
-			
-			assertEquals("HAPPY", msg);
-			
-		}
-	
-
+    
 }
