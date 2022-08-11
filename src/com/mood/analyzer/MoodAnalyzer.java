@@ -19,7 +19,7 @@ public class MoodAnalyzer {
 					return "SAD";
 			}
 			else
-				throw new Exception();
+				throw new Exception("MoodAnalysisException ");
 		} catch (Exception e) {
 			System.out.println(e);
 			return "Happy";
