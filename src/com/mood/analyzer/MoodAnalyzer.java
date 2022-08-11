@@ -13,32 +13,26 @@ public class MoodAnalyzer {
 	}
 
 	public String analyseMood() {
-		if (massage.contains("Sad"))
-			return "SAD";
-		else
-			return "HAPPY";
+		try {
+			if (massage != "" || massage.equalsIgnoreCase("Happy") || massage.equals("Sad")) {
+				if (massage.contains("Sad"))
+					return "SAD";
+			}
+			else
+				throw new Exception();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return "Happy";
 	}
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		try {
-			System.out.print("Enter mood : ");
-			String msg = scanner.nextLine();
-			if (msg != "" || msg.equalsIgnoreCase("Happy") || msg.equals("Sad")) {
-				MoodAnalyzer moodAnalyzer = new MoodAnalyzer(msg);
-				String mood = moodAnalyzer.analyseMood();
-				System.out.println("Current Mood is :" + mood);
-			} else {
-				extracted();
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+		System.out.print("Enter mood : ");
+		String msg = scanner.nextLine();
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer(msg);
+		String mood = moodAnalyzer.analyseMood();
+		System.out.println("Current Mood is :" + mood);
 		scanner.close();
-	}
-
-	private static void extracted() {
-		throw new NullPointerException();
 	}
 }
