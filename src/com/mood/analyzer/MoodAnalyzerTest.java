@@ -10,7 +10,7 @@ class MoodAnalyzerTest {
 
 	//repeat tc_1.1
 	@Test
-	public void givenIAmSadMoodShouldReturnSAD() {
+	public void givenIAmSadMoodShouldReturnSAD() throws Exception {
 		String msg ="I Am Sad Mood";
 		MoodAnalyzer analyzer= new MoodAnalyzer(msg);
 		String massage = analyzer.analyseMood();
