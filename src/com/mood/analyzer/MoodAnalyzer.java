@@ -14,7 +14,7 @@ public class MoodAnalyzer {
 
 	public String analyseMood() {
 		try {
-			if (massage != "" || massage.equalsIgnoreCase("Happy") || massage.equals("Sad")) {
+			if (massage != "" ) {
 				if (massage.contains("Sad"))
 					return "SAD";
 			}
@@ -22,6 +22,7 @@ public class MoodAnalyzer {
 				throw new Exception();
 		} catch (Exception e) {
 			System.out.println(e);
+			return "Happy";
 		}
 		return "Happy";
 	}
