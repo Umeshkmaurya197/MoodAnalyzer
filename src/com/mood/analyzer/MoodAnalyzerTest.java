@@ -21,7 +21,7 @@ class MoodAnalyzerTest {
 
 	//repeat tc_1.2
 	@Test
-	public void givenIAmInAnyMoodShouldReturnHAPPPY() {
+	public void givenIAmInAnyMoodShouldReturnHAPPPY() throws Exception {
 		String msg ="I Am Happy Mood";
 		MoodAnalyzer analyzer= new MoodAnalyzer(msg);
 		String massage = analyzer.analyseMood();
@@ -32,9 +32,8 @@ class MoodAnalyzerTest {
 	
 	//tc2.1
 	@Test
-	public void givenNullMoodShouldReturnHappy() {
+	public void givenNullMoodShouldReturnHappy() throws Exception {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter mood : ");
 		String msg ="null";
 		MoodAnalyzer analyzer= new MoodAnalyzer(msg);
 		String massage = analyzer.analyseMood();
@@ -42,5 +41,16 @@ class MoodAnalyzerTest {
 		assertEquals("Happy", massage);
 
 	}
+	//tc_3.1
+	@Test
+	public void givenNullMoodShouldThrowMoodAnalysisException() throws Exception {
+		Scanner scanner = new Scanner(System.in);
+		
+		String msg =scanner.nextLine();
+		MoodAnalyzer analyzer= new MoodAnalyzer(msg);
+		String massage = analyzer.analyseMood();
+		System.out.println(massage);
+		assertEquals("MoodAnalysisException", massage);
 
+	}
 }

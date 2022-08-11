@@ -12,22 +12,19 @@ public class MoodAnalyzer {
 		this.massage = massage;
 	}
 
-	public String analyseMood() {
+	public String analyseMood() throws Exception {
 		try {
 			if (massage != "" ) {
 				if (massage.contains("Sad"))
 					return "SAD";
 			}
-			else
-				throw new Exception("MoodAnalysisException ");
 		} catch (Exception e) {
-			System.out.println(e);
-			return "Happy";
+			throw new Exception("MoodAnalysisException ");
 		}
 		return "Happy";
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter mood : ");
 		String msg = scanner.nextLine();
